@@ -32,7 +32,7 @@ trait Part01 {
      user <- getUser(username)
      email = getEmail(user)
      validatedEmail <- validateEmail(email)
-     success <- sendEmail(validatedEmail)
+     success <- sendEmail(email)
   } yield success
 }
 

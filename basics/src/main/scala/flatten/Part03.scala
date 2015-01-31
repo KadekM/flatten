@@ -36,5 +36,12 @@ trait Part03 {
   val data = Map[String, String]()
 
   // Exercise, write the same program as in Part01 and Part02, with a for-comprehension
+  val res = for {
+    username <- getUserName(data)
+    user <- getUser(username)
+    email = getEmail(user)
+    validated <- validateEmail(email)
+    success <- sendEmail(email)
+  } yield success
 
 }
